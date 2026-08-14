@@ -30,42 +30,54 @@
         font-family: "Promo test", sans-serif;
         margin-top: 20px;
       }
+      .hero {
+        background-color: #1c66b1;
+        padding: 20px;
+      }
     </style>
   </head>
   <body>
     <div class="pricing-page">
       <div class="pricing-header">Self<span>Pic</span></div>
-      <div class="pricing-intro">
-        <h1>Our Packages</h1>
-        <h4>Find session that's right for you</h4>
-      </div>
-      <div class="pricing-search" style="text-align: center; margin-top: 20px">
-        <input type="text" placeholder="Search for a package" />
+      <div class="hero">
+        <div>
+          <div class="pricing-intro">
+            <h1>Our Packages</h1>
+            <h4>Find session that's right for you</h4>
+          </div>
+          <div
+            class="pricing-search"
+            style="text-align: center; margin-top: 20px"
+          >
+            <input type="text" placeholder="Search for a package" />
+          </div>
+        </div>
+        <div
+          class="selection-categories"
+          style="text-align: center; margin-top: 20px"
+        >
+          <!--desktop-->
+          <div class="buttons d-none d-lg-flex justify-content-center gap-2">
+            <button class="all">ALL</button>
+            <button class="selfPortrait">Self Portrait</button>
+            <button class="studioPortrait">Studio Portrait</button>
+            <button class="studioRental">Studio Rental</button>
+            <button class="addons">Add-ons</button>
+          </div>
+          <!--mobile-->
+          <div class="d-lg-none w-50 mx-auto" style="margin-top: 20px">
+            <select class="form-select" aria-label="Default select example">
+              <option value="all">ALL</option>
+              <option value="selfPortrait">Self Portrait</option>
+              <option value="studioPortrait">Studio Portrait</option>
+              <option value="studioRental">Studio Rental</option>
+              <option value="addons">Add-ons</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
-    <div
-      class="pricing-categories"
-      style="text-align: center; margin-top: 20px"
-    >
-      <!--desktop-->
-      <div class="buttons d-none d-lg-flex justify-content-center gap-2">
-        <button class="all">ALL</button>
-        <button class="selfPortrait">Self Portrait</button>
-        <button class="studioPortrait">Studio Portrait</button>
-        <button class="studioRental">Studio Rental</button>
-        <button class="addons">Add-ons</button>
-      </div>
-      <!--mobile-->
-      <div class="d-lg-none">
-        <select class="form-select" aria-label="Default select example">
-          <option value="all">ALL</option>
-          <option value="selfPortrait">Self Portrait</option>
-          <option value="studioPortrait">Studio Portrait</option>
-          <option value="studioRental">Studio Rental</option>
-          <option value="addons">Add-ons</option>
-        </select>
-      </div>
-    </div>
+
     <div
       class="container-fluid d-flex justify-content-center flex-wrap mt-4 mb-4 gap-3"
     >
