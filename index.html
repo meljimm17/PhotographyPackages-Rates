@@ -16,7 +16,7 @@
       }
 
       body {
-        background-color: #fcf7e7;
+        background-color: #f6f0e5;
         color: #262c38;
         animation: pageLoad 0.8s ease-out;
       }
@@ -53,7 +53,7 @@
 
       /* ================== HERO SECTION ================== */
       .hero {
-        background-color: #fcf7e7;
+        background-color: #f6f0e5;
         padding: 60px 20px;
       }
 
@@ -86,23 +86,45 @@
         display: flex;
         justify-content: center;
         animation: fadeUp 0.7s ease-out 0.3s both;
+        position: relative;
+        width: 100%;
       }
 
       .pricing-search input {
         width: 100%;
         max-width: 480px;
-        padding: 14px 20px;
+        padding: 14px 20px 14px 44px;
         font-size: 16px;
-        border: 1px solid #e0d5c0;
-        border-radius: 6px;
-        background-color: white;
+        border: 1px solid rgba(38, 44, 56, 0.12);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.45);
         color: #262c38;
         transition: all 200ms ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        box-shadow: inset 0 1px 2px rgba(38, 44, 56, 0.04);
+      }
+
+      .pricing-search svg {
+        position: absolute;
+        left: calc(50% - 240px + 16px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        color: rgba(38, 44, 56, 0.45);
+        pointer-events: none;
+        opacity: 0.8;
+      }
+
+      .pricing-search svg path {
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
 
       .pricing-search input::placeholder {
-        color: #999;
+        color: rgba(38, 44, 56, 0.52);
       }
 
       .pricing-search input:focus {
@@ -178,6 +200,10 @@
         flex-wrap: wrap;
         gap: 28px;
         padding: 40px 20px;
+      }
+
+      .cards-container.filtered-single {
+        justify-content: center;
       }
 
       /* ================== CARDS ================== */
@@ -501,6 +527,9 @@
             class="pricing-search"
             style="text-align: center; margin-top: 20px"
           >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 4a7 7 0 1 1 0 14a7 7 0 0 1 0-14zm8 20l-4.35-4.35" />
+            </svg>
             <input
               type="text"
               id="searchInput"
@@ -561,11 +590,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modalTitle"></h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-            ></button>
           </div>
           <div class="modal-body">
             <div class="details-price" id="modalPrice"></div>
@@ -963,11 +987,19 @@
         if (filtered.length === 0) {
           container.innerHTML = "";
           noResults.style.display = "block";
+          container.classList.remove("filtered-single");
         } else {
           container.innerHTML = filtered
             .map((card) => createCardHTML(card))
             .join("");
           noResults.style.display = "none";
+
+          // Center single filtered card on mobile
+          if (filtered.length === 1) {
+            container.classList.add("filtered-single");
+          } else {
+            container.classList.remove("filtered-single");
+          }
         }
       }
 
