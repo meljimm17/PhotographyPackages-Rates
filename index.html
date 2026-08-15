@@ -11,28 +11,480 @@
       crossorigin="anonymous"
     />
     <style>
+      * {
+        font-family: "Promo test", sans-serif;
+      }
+
+      body {
+        background-color: #fcf7e7;
+        color: #262c38;
+        animation: pageLoad 0.8s ease-out;
+      }
+
+      @keyframes pageLoad {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ================== HEADER ================== */
       .pricing-header {
         background-color: #262c38;
         color: white;
-        white-space: nowrap;
-        font-family: "Promo test", sans-serif;
+        padding: 32px 20px;
         text-align: center;
-        font-size: 24px;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        animation: fadeDown 0.7s ease-out;
       }
+
       .pricing-header span {
         color: #f8c722;
-        font-family: "Promo test", sans-serif;
-        text-align: center;
-        font-size: 24px;
+        font-weight: 700;
       }
+
+      /* ================== HERO SECTION ================== */
+      .hero {
+        background-color: #fcf7e7;
+        padding: 60px 20px;
+      }
+
+      /* ================== PRICING INTRO ================== */
       .pricing-intro {
         text-align: center;
-        font-family: "Promo test", sans-serif;
-        margin-top: 20px;
+        margin-bottom: 40px;
+        animation: fadeUp 0.7s ease-out 0.15s both;
       }
-      .hero {
-        background-color: #1c66b1;
+
+      .pricing-intro h1 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #262c38;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .pricing-intro h4 {
+        font-size: 16px;
+        font-weight: 400;
+        color: #666;
+        letter-spacing: 0.3px;
+        margin: 0;
+      }
+
+      /* ================== SEARCH BAR ================== */
+      .pricing-search {
+        margin-bottom: 48px;
+        display: flex;
+        justify-content: center;
+        animation: fadeUp 0.7s ease-out 0.3s both;
+      }
+
+      .pricing-search input {
+        width: 100%;
+        max-width: 480px;
+        padding: 14px 20px;
+        font-size: 16px;
+        border: 1px solid #e0d5c0;
+        border-radius: 6px;
+        background-color: white;
+        color: #262c38;
+        transition: all 200ms ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      }
+
+      .pricing-search input::placeholder {
+        color: #999;
+      }
+
+      .pricing-search input:focus {
+        outline: none;
+        border-color: #f8c722;
+        box-shadow: 0 2px 8px rgba(248, 199, 34, 0.15);
+        background-color: #fffbf3;
+      }
+
+      /* ================== CATEGORY NAVIGATION ================== */
+      .selection-categories {
+        margin-top: 40px;
+        animation: fadeUp 0.7s ease-out 0.4s both;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .category-btn {
+        padding: 11px 24px;
+        border: 1.5px solid #262c38;
+        background-color: transparent;
+        color: #262c38;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 200ms ease;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+
+      .category-btn:hover {
+        background-color: #f8c722;
+        border-color: #f8c722;
+        color: #262c38;
+      }
+
+      .category-btn.active {
+        background-color: #f8c722;
+        border-color: #f8c722;
+        color: #262c38;
+        font-weight: 600;
+      }
+
+      /* Mobile dropdown */
+      .form-select {
+        padding: 12px 16px;
+        border: 1.5px solid #262c38;
+        border-radius: 6px;
+        background-color: white;
+        color: #262c38;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 200ms ease;
+      }
+
+      .form-select:focus {
+        outline: none;
+        border-color: #f8c722;
+        box-shadow: 0 2px 8px rgba(248, 199, 34, 0.15);
+      }
+
+      /* ================== CARDS CONTAINER ================== */
+      .cards-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 28px;
+        padding: 40px 20px;
+      }
+
+      /* ================== CARDS ================== */
+      .card {
+        width: 280px;
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        animation: fadeUp 0.7s ease-out 0.5s both;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-img-top {
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        transition: transform 300ms ease;
+      }
+
+      .card:hover .card-img-top {
+        transform: scale(1.03);
+      }
+
+      .card-body {
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .card-title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+        color: #262c38;
+        margin-bottom: 16px;
+        line-height: 1.4;
+        letter-spacing: 0.2px;
+      }
+
+      .card-price {
+        text-align: center;
+        color: #262c38;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+      }
+
+      .card-btn {
+        background-color: #262c38;
+        border: 2px solid #262c38;
+        color: white;
+        padding: 13px 24px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 200ms ease;
+        margin-top: auto;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .card-btn:hover {
+        background-color: #f8c722;
+        border-color: #f8c722;
+        color: #262c38;
+        transform: translateY(-2px);
+      }
+
+      .card-btn:active {
+        transform: translateY(0);
+      }
+
+      /* ================== NO RESULTS ================== */
+      .no-results {
+        text-align: center;
+        padding: 80px 20px;
+        font-size: 18px;
+        color: #999;
+        width: 100%;
+      }
+
+      /* ================== MODAL STYLES ================== */
+      .modal-header {
+        background-color: #262c38;
+        border-bottom: 2px solid #f8c722;
+        padding: 24px;
+      }
+
+      .modal-title {
+        color: white;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: -0.5px;
+      }
+
+      .btn-close-white {
+        filter: brightness(0) invert(1);
+      }
+
+      .modal-body {
+        max-height: 60vh;
+        overflow-y: auto;
+        padding: 32px;
+        background-color: #fcf7e7;
+      }
+
+      .modal-body ul {
+        margin-left: 20px;
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .modal-body li {
+        margin-bottom: 14px;
+        padding-left: 24px;
+        position: relative;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .modal-body li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #f8c722;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .details-price {
+        color: #262c38;
+        font-size: 36px;
+        font-weight: 700;
+        margin: 0 0 24px 0;
+        letter-spacing: -1px;
+      }
+
+      .modal-body h6 {
+        color: #262c38;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+      }
+
+      .modal-footer {
+        background-color: white;
+        border-top: 1px solid #e0d5c0;
         padding: 20px;
+      }
+
+      .btn-secondary {
+        background-color: #262c38;
+        border-color: #262c38;
+        font-weight: 600;
+      }
+
+      .btn-secondary:hover {
+        background-color: #f8c722;
+        border-color: #f8c722;
+        color: #262c38;
+      }
+      /* ================== Smooth animation  ================== */
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ================== RESPONSIVE DESIGN ================== */
+      @media (max-width: 1200px) {
+        .card {
+          width: 280px;
+        }
+
+        .pricing-intro h1 {
+          font-size: 36px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .hero {
+          padding: 48px 20px;
+        }
+
+        .pricing-intro h1 {
+          font-size: 32px;
+        }
+
+        .buttons {
+          display: none;
+        }
+
+        .card {
+          width: 100%;
+          max-width: 300px;
+          flex-shrink: 0;
+        }
+
+        .cards-container {
+          gap: 24px;
+          padding: 32px 16px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          justify-content: flex-start;
+          width: 100%;
+          flex-wrap: nowrap;
+        }
+
+        .cards-container::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .cards-container::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.05);
+          border-radius: 10px;
+        }
+
+        .cards-container::-webkit-scrollbar-thumb {
+          background: #262c38;
+          border-radius: 10px;
+        }
+
+        .cards-container::-webkit-scrollbar-thumb:hover {
+          background: #f8c722;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .pricing-header {
+          padding: 24px 16px;
+          font-size: 28px;
+        }
+
+        .hero {
+          padding: 40px 16px;
+        }
+
+        .pricing-intro h1 {
+          font-size: 28px;
+          margin-bottom: 8px;
+        }
+
+        .pricing-intro h4 {
+          font-size: 14px;
+        }
+
+        .pricing-search input {
+          font-size: 14px;
+          padding: 12px 16px;
+        }
+
+        .card {
+          width: 280px;
+          max-width: 280px;
+          flex-shrink: 0;
+        }
+
+        .cards-container {
+          gap: 20px;
+          padding: 24px 12px;
+        }
+
+        .card-body {
+          padding: 24px 20px;
+        }
+
+        .card-img-top {
+          height: 200px;
+        }
+
+        .modal-body {
+          padding: 24px;
+        }
       }
     </style>
   </head>
@@ -49,24 +501,40 @@
             class="pricing-search"
             style="text-align: center; margin-top: 20px"
           >
-            <input type="text" placeholder="Search for a package" />
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search for a package"
+            />
           </div>
         </div>
         <div
           class="selection-categories"
           style="text-align: center; margin-top: 20px"
         >
-          <!--desktop-->
-          <div class="buttons d-none d-lg-flex justify-content-center gap-2">
-            <button class="all">ALL</button>
-            <button class="selfPortrait">Self Portrait</button>
-            <button class="studioPortrait">Studio Portrait</button>
-            <button class="studioRental">Studio Rental</button>
-            <button class="addons">Add-ons</button>
+          <!-- Desktop category buttons -->
+          <div
+            class="buttons d-none d-lg-flex justify-content-center gap-2 flex-wrap"
+          >
+            <button class="category-btn active" data-category="all">ALL</button>
+            <button class="category-btn" data-category="selfPortrait">
+              Self Portrait
+            </button>
+            <button class="category-btn" data-category="studioPortrait">
+              Studio Portrait
+            </button>
+            <button class="category-btn" data-category="studioRental">
+              Studio Rental
+            </button>
+            <button class="category-btn" data-category="addons">Add-ons</button>
           </div>
-          <!--mobile-->
-          <div class="d-lg-none w-50 mx-auto" style="margin-top: 20px">
-            <select class="form-select" aria-label="Default select example">
+          <!-- Mobile category dropdown -->
+          <div class="d-lg-none w-75 mx-auto" style="margin-top: 20px">
+            <select
+              class="form-select"
+              id="categorySelect"
+              aria-label="Select category"
+            >
               <option value="all">ALL</option>
               <option value="selfPortrait">Self Portrait</option>
               <option value="studioPortrait">Studio Portrait</option>
@@ -78,70 +546,514 @@
       </div>
     </div>
 
-    <div
-      class="container-fluid d-flex justify-content-center flex-wrap mt-4 mb-4 gap-3"
-    >
-      <div class="card" style="width: 18rem">
-        <img
-          src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
-          class="card-img-top"
-          alt="Lion"
-        />
-        <div class="card-body" style="width: 18rem">
-          <h5 class="card-title" style="text-align: center">Lion</h5>
-          <h1 class="card-price" style="text-align: center">$99.99</h1>
-          <a href="viewDetails" class="btn btn-primary w-100 mt-auto"
-            >View more details</a
-          >
-        </div>
+    <div class="container-fluid mt-4 mb-4">
+      <div class="cards-container" id="cardsContainer">
+        <!-- Cards will be populated here -->
       </div>
-      <div class="card" style="width: 18rem">
-        <img
-          src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
-          class="card-img-top"
-          alt="Lion"
-        />
-        <div class="card-body" style="width: 18rem">
-          <h5 class="card-title" style="text-align: center">Lion</h5>
-          <h1 class="card-price" style="text-align: center">$99.99</h1>
-          <a href="viewDetails" class="btn btn-primary w-100 mt-auto"
-            >View more details</a
-          >
-        </div>
+      <div class="no-results" id="noResults" style="display: none">
+        No packages found matching your search.
       </div>
-      <div class="card" style="width: 18rem">
-        <img
-          src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
-          class="card-img-top"
-          alt="Lion"
-        />
-        <div class="card-body" style="width: 18rem">
-          <h5 class="card-title" style="text-align: center">Lion</h5>
-          <h1 class="card-price" style="text-align: center">$99.99</h1>
-          <a href="viewDetails" class="btn btn-primary w-100 mt-auto"
-            >View more details</a
-          >
-        </div>
-      </div>
-      <div class="card" style="width: 18rem">
-        <img
-          src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
-          class="card-img-top"
-          alt="Lion"
-        />
-        <div class="card-body" style="width: 18rem">
-          <h5 class="card-title" style="text-align: center">Lion</h5>
-          <h1 class="card-price" style="text-align: center">$99.99</h1>
-          <a href="viewDetails" class="btn btn-primary w-100 mt-auto"
-            >View more details</a
-          >
+    </div>
+
+    <!-- Details Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle"></h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="details-price" id="modalPrice"></div>
+            <h6 style="font-weight: bold; margin-top: 20px">
+              Package Includes:
+            </h6>
+            <ul id="modalFeatures"></ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      // Pricing data for all packages
+      const cardsData = {
+        selfPortrait: [
+          {
+            id: 1,
+            title: "SNAP",
+            price: "₱290",
+            category: "selfPortrait",
+            features: [
+              "15-Minute Session",
+              "1 Person",
+              "Unlimited Shots",
+              "15 Enhanced Digital Copies",
+              "1 Backdrop Color",
+              "Access to Props",
+              "1 pc 4R Print",
+            ],
+          },
+          {
+            id: 2,
+            title: "POSE",
+            price: "₱390",
+            category: "selfPortrait",
+            features: [
+              "15-Minute Session",
+              "1–2 Persons",
+              "Unlimited Shots",
+              "15 Enhanced Digital Copies",
+              "1 Backdrop Color",
+              "Access to Props",
+              "2 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 3,
+            title: "CLICK",
+            price: "₱550",
+            category: "selfPortrait",
+            features: [
+              "15-Minute Session",
+              "3–4 Persons",
+              "Unlimited Shots",
+              "20 Enhanced Digital Copies",
+              "1 Backdrop Color",
+              "Access to Props",
+              "2 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 4,
+            title: "FLASH",
+            price: "₱790",
+            category: "selfPortrait",
+            features: [
+              "30-Minute Session",
+              "5–6 Persons",
+              "Unlimited Shots",
+              "30 Enhanced Digital Copies",
+              "1 Backdrop Color",
+              "Access to Props",
+              "4 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 5,
+            title: "SPOTLIGHT",
+            price: "₱990",
+            category: "selfPortrait",
+            features: [
+              "30-Minute Session",
+              "7–10 Persons",
+              "Unlimited Shots",
+              "30 Enhanced Digital Copies",
+              "1 Backdrop Color",
+              "Access to Props",
+              "4 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 6,
+            title: "FOREVER PROMO",
+            price: "₱99",
+            category: "selfPortrait",
+            features: [
+              "5-Minute Photo Session",
+              "1 Person Only",
+              "5 Enhanced Digital Copies",
+              "Can combine with friends",
+            ],
+          },
+        ],
+        studioPortrait: [
+          {
+            id: 7,
+            title: "MINI SESSION",
+            price: "₱399",
+            category: "studioPortrait",
+            features: [
+              "30-Minute Studio Session",
+              "Up to 3 Persons",
+              "Professional Photographer",
+              "15 Enhanced Digital Photos",
+              "1 Plain Backdrop Color",
+              "Themed backdrops available",
+              "2 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 8,
+            title: "CLASSIC",
+            price: "₱799",
+            category: "studioPortrait",
+            features: [
+              "30-Minute Studio Session",
+              "Up to 5 Persons",
+              "Professional Photographer",
+              "30 Enhanced Digital Photos",
+              "1 Plain Backdrop Color",
+              "Themed backdrops available",
+              "2 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 9,
+            title: "SIGNATURE",
+            price: "₱1,500",
+            category: "studioPortrait",
+            features: [
+              "60-Minute Studio Session",
+              "Up to 10 Persons",
+              "Professional Photographer",
+              "50 Enhanced Digital Photos",
+              "1 Plain Backdrop Color",
+              "4 pcs 4R Prints",
+            ],
+          },
+          {
+            id: 10,
+            title: "KIDS-THEMED BACKDROP",
+            price: "₱300-₱500",
+            category: "studioPortrait",
+            features: [
+              "Creative themed setup",
+              "Perfect for kids",
+              "Reservation required",
+              "1-2 weeks notice needed",
+              "Elevate your session",
+            ],
+          },
+          {
+            id: 11,
+            title: "FANTASY-THEMED SETUP",
+            price: "From ₱1,000",
+            category: "studioPortrait",
+            features: [
+              "Custom creative setup",
+              "Bring your mood board",
+              "Professional styling",
+              "Bring your vision to life",
+            ],
+          },
+        ],
+        studioRental: [
+          {
+            id: 12,
+            title: "1 HOUR RENTAL",
+            price: "₱1,000",
+            category: "studioRental",
+            features: [
+              "Camera included",
+              "Basic Studio Lights",
+              "Available Props",
+              "Plain Backdrops",
+              "Perfect for beginners",
+            ],
+          },
+          {
+            id: 13,
+            title: "2 HOURS RENTAL",
+            price: "₱1,800",
+            category: "studioRental",
+            features: [
+              "Camera included",
+              "Basic Studio Lights",
+              "Available Props",
+              "Plain Backdrops",
+              "Extended time",
+            ],
+          },
+          {
+            id: 14,
+            title: "3 HOURS RENTAL",
+            price: "₱2,600",
+            category: "studioRental",
+            features: [
+              "Camera included",
+              "Basic Studio Lights",
+              "Available Props",
+              "Plain Backdrops",
+              "Maximum flexibility",
+            ],
+          },
+          {
+            id: 15,
+            title: "ADDITIONAL HOUR",
+            price: "₱500/hr",
+            category: "studioRental",
+            features: [
+              "Add more time",
+              "Camera included",
+              "Studio Lights",
+              "Props & Backdrops",
+              "Per hour rate",
+            ],
+          },
+        ],
+        addons: [
+          {
+            id: 16,
+            title: "Additional 10 Minutes",
+            price: "₱100",
+            category: "addons",
+            features: [
+              "Extend Self Portrait session",
+              "More shots",
+              "Same category",
+            ],
+          },
+          {
+            id: 17,
+            title: "Additional Person",
+            price: "₱100",
+            category: "addons",
+            features: [
+              "Add more people",
+              "Self Portrait category",
+              "Per person charge",
+            ],
+          },
+          {
+            id: 18,
+            title: "Additional Backdrop",
+            price: "₱150",
+            category: "addons",
+            features: [
+              "Add backdrop color",
+              "Self Portrait sessions",
+              "Customize your setup",
+            ],
+          },
+          {
+            id: 19,
+            title: "Take All (50-100 Photos)",
+            price: "₱200",
+            category: "addons",
+            features: [
+              "Enhanced digital copies",
+              "50-100 Photos",
+              "Google Drive delivery",
+              "Same day delivery",
+            ],
+          },
+          {
+            id: 20,
+            title: "Take All (101-200 Photos)",
+            price: "₱300",
+            category: "addons",
+            features: [
+              "Enhanced digital copies",
+              "101-200 Photos",
+              "Google Drive delivery",
+              "Same day delivery",
+            ],
+          },
+          {
+            id: 21,
+            title: "Take All (201-300 Photos)",
+            price: "₱400",
+            category: "addons",
+            features: [
+              "Enhanced digital copies",
+              "201-300 Photos",
+              "Google Drive delivery",
+              "Same day delivery",
+            ],
+          },
+          {
+            id: 22,
+            title: "Take All (300+ Photos)",
+            price: "₱500",
+            category: "addons",
+            features: [
+              "Enhanced digital copies",
+              "300+ Photos",
+              "Google Drive delivery",
+              "Same day delivery",
+            ],
+          },
+        ],
+      };
+
+      // Flatten all cards for easier filtering
+      let allCards = [];
+      Object.values(cardsData).forEach((category) => {
+        allCards = allCards.concat(category);
+      });
+
+      const lionImageUrl =
+        "https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg";
+
+      let currentCategory = "all";
+      let searchQuery = "";
+
+      // Create card HTML
+      function createCardHTML(card) {
+        return `
+          <div class="card" data-card-id="${card.id}" data-category="${card.category}">
+            <img src="${lionImageUrl}" class="card-img-top" alt="${card.title}" />
+            <div class="card-body">
+              <h5 class="card-title">${card.title}</h5>
+              <div class="card-price">${card.price}</div>
+              <button class="card-btn" onclick="showDetails(${card.id})">View Details</button>
+            </div>
+          </div>
+        `;
+      }
+
+      // Show details modal
+      function showDetails(cardId) {
+        const card = allCards.find((c) => c.id === cardId);
+        if (!card) return;
+
+        document.getElementById("modalTitle").textContent = card.title;
+        document.getElementById("modalPrice").textContent = card.price;
+
+        const featuresHTML = card.features.map((f) => `<li>${f}</li>`).join("");
+        document.getElementById("modalFeatures").innerHTML = featuresHTML;
+
+        const modal = new bootstrap.Modal(
+          document.getElementById("detailsModal"),
+        );
+        modal.show();
+      }
+
+      // Filter and display cards
+      function filterAndDisplay() {
+        let filtered = allCards;
+
+        // Filter by category
+        if (currentCategory !== "all") {
+          filtered = filtered.filter(
+            (card) => card.category === currentCategory,
+          );
+        }
+
+        // Filter by search query
+        if (searchQuery.trim() !== "") {
+          filtered = filtered.filter((card) =>
+            card.title.toLowerCase().includes(searchQuery.toLowerCase()),
+          );
+        }
+
+        // Display filtered cards
+        const container = document.getElementById("cardsContainer");
+        const noResults = document.getElementById("noResults");
+
+        if (filtered.length === 0) {
+          container.innerHTML = "";
+          noResults.style.display = "block";
+        } else {
+          container.innerHTML = filtered
+            .map((card) => createCardHTML(card))
+            .join("");
+          noResults.style.display = "none";
+        }
+      }
+
+      // Category button click handler
+      document.addEventListener("DOMContentLoaded", () => {
+        // Desktop category buttons
+        document.querySelectorAll(".category-btn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            document
+              .querySelectorAll(".category-btn")
+              .forEach((b) => b.classList.remove("active"));
+            e.target.classList.add("active");
+            currentCategory = e.target.dataset.category;
+            filterAndDisplay();
+          });
+        });
+
+        // Mobile category dropdown
+        const categorySelect = document.getElementById("categorySelect");
+        if (categorySelect) {
+          categorySelect.addEventListener("change", (e) => {
+            currentCategory = e.target.value;
+            // Update desktop buttons
+            document.querySelectorAll(".category-btn").forEach((btn) => {
+              btn.classList.remove("active");
+              if (btn.dataset.category === currentCategory) {
+                btn.classList.add("active");
+              }
+            });
+            filterAndDisplay();
+          });
+        }
+
+        // Search input
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", (e) => {
+            searchQuery = e.target.value;
+            filterAndDisplay();
+          });
+
+        // Initial display
+        filterAndDisplay();
+
+        // ================== SWIPE FUNCTIONALITY FOR MOBILE ================== //
+        const cardsContainer = document.getElementById("cardsContainer");
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        cardsContainer.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+          },
+          false,
+        );
+
+        cardsContainer.addEventListener(
+          "touchend",
+          (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+          },
+          false,
+        );
+
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          const diff = touchStartX - touchEndX;
+
+          // Swipe left - scroll right
+          if (diff > swipeThreshold) {
+            cardsContainer.scrollBy({
+              left: 300,
+              behavior: "smooth",
+            });
+          }
+          // Swipe right - scroll left
+          else if (diff < -swipeThreshold) {
+            cardsContainer.scrollBy({
+              left: -300,
+              behavior: "smooth",
+            });
+          }
+        }
+      });
+    </script>
   </body>
 </html>
