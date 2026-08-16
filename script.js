@@ -296,27 +296,223 @@ const cardsData = {
 };
 
 // Flatten all cards for easier filtering
-let allCards = [];
-Object.values(cardsData).forEach((category) => {
-  allCards = allCards.concat(category);
-});
+let allCards = Object.values(cardsData)
+  .flat()
+  .filter((card) => card.category !== "addons");
 
 const lionImageUrl =
   "https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg";
+
+const detailSectionsMap = {
+  selfPortrait: {
+    SNAP: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional 10 Minutes — ₱100",
+          "Additional Person — ₱100 per person",
+          "Additional Backdrop Color — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "50–100 Photos — ₱200",
+          "101–200 Photos — ₱300",
+          "201–300 Photos — ₱400",
+          "300+ Photos — ₱500",
+        ],
+      },
+    ],
+    POSE: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional 10 Minutes — ₱100",
+          "Additional Person — ₱100 per person",
+          "Additional Backdrop Color — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "50–100 Photos — ₱200",
+          "101–200 Photos — ₱300",
+          "201–300 Photos — ₱400",
+          "300+ Photos — ₱500",
+        ],
+      },
+    ],
+    CLICK: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional 10 Minutes — ₱100",
+          "Additional Person — ₱100 per person",
+          "Additional Backdrop Color — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "50–100 Photos — ₱200",
+          "101–200 Photos — ₱300",
+          "201–300 Photos — ₱400",
+          "300+ Photos — ₱500",
+        ],
+      },
+    ],
+    FLASH: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional 10 Minutes — ₱100",
+          "Additional Person — ₱100 per person",
+          "Additional Backdrop Color — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "50–100 Photos — ₱200",
+          "101–200 Photos — ₱300",
+          "201–300 Photos — ₱400",
+          "300+ Photos — ₱500",
+        ],
+      },
+    ],
+    SPOTLIGHT: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional 10 Minutes — ₱100",
+          "Additional Person — ₱100 per person",
+          "Additional Backdrop Color — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "50–100 Photos — ₱200",
+          "101–200 Photos — ₱300",
+          "201–300 Photos — ₱400",
+          "300+ Photos — ₱500",
+        ],
+      },
+    ],
+    "FOREVER PROMO": [
+      {
+        heading: "Take All Enhanced Photos (Forever Promo)",
+        items: [
+          "1–2 Persons — ₱100",
+          "3–4 Persons — ₱200",
+          "5–7 Persons — ₱300",
+          "8–10 Persons — ₱500",
+        ],
+      },
+    ],
+  },
+  studioPortrait: {
+    "MINI SESSION": [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional Person — ₱100/person",
+          "Additional 10 Minutes — ₱200",
+          "Additional Plain Backdrop — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "Mini Session — ₱200",
+          "Classic Session — ₱300",
+          "Signature Session — ₱500",
+        ],
+      },
+    ],
+    CLASSIC: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional Person — ₱100/person",
+          "Additional 10 Minutes — ₱200",
+          "Additional Plain Backdrop — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "Mini Session — ₱200",
+          "Classic Session — ₱300",
+          "Signature Session — ₱500",
+        ],
+      },
+    ],
+    SIGNATURE: [
+      {
+        heading: "Add-ons",
+        items: [
+          "Additional Person — ₱100/person",
+          "Additional 10 Minutes — ₱200",
+          "Additional Plain Backdrop — ₱150",
+        ],
+      },
+      {
+        heading: "Take All Enhanced Digital Copies",
+        items: [
+          "Mini Session — ₱200",
+          "Classic Session — ₱300",
+          "Signature Session — ₱500",
+        ],
+      },
+    ],
+  },
+  studioRental: {},
+};
+
+const bookingImportantMap = {
+  selfPortrait: [
+    "All digital photos are professionally enhanced using Adobe Lightroom.",
+    "Photos will be delivered via Google Drive on the same day, no later than 10:00 PM.",
+    "Rush Release: Add ₱200 for expedited photo delivery (subject to availability).",
+  ],
+  studioPortrait: [
+    "All enhanced digital copies will be delivered via Google Drive.",
+  ],
+  studioRental: [
+    "Please bring your own USB flash drive for the transfer of your soft copies after the session.",
+    "Ensure your flash drive has enough available storage before your scheduled rental.",
+  ],
+};
 
 let currentCategory = "all";
 let searchQuery = "";
 
 // Create card HTML
 function createCardHTML(card) {
+  const isFeaturedSnap = currentCategory === "all" && card.title === "SNAP";
+
   return `
     <div class="card" data-card-id="${card.id}" data-category="${card.category}">
+      ${isFeaturedSnap ? '<span class="popular-badge">Top Choice</span>' : ""}
       <img src="${lionImageUrl}" class="card-img-top" alt="${card.title}" />
       <div class="card-body">
         <h5 class="card-title">${card.title}</h5>
         <div class="card-price">${card.price}</div>
         <button class="card-btn" onclick="showDetails(${card.id})">View Details</button>
       </div>
+    </div>
+  `;
+}
+
+function buildDetailSectionMarkup(section) {
+  const itemsMarkup = section.items.map((item) => `<li>${item}</li>`).join("");
+
+  return `
+    <div class="detail-block">
+      <h6>${section.heading}</h6>
+      <ul>${itemsMarkup}</ul>
     </div>
   `;
 }
@@ -332,13 +528,39 @@ function showDetails(cardId) {
   const featuresHTML = card.features.map((f) => `<li>${f}</li>`).join("");
   document.getElementById("modalFeatures").innerHTML = featuresHTML;
 
+  const extraContainer = document.getElementById("modalAdditionalInfo");
+  const packageSections = detailSectionsMap[card.category]?.[card.title] || [];
+  extraContainer.innerHTML = packageSections
+    .map((section) => buildDetailSectionMarkup(section))
+    .join("");
+
   const modal = new bootstrap.Modal(document.getElementById("detailsModal"));
+  modal.show();
+}
+
+function showBookingImportantMessage() {
+  const noticeItems =
+    bookingImportantMap[currentCategory] || bookingImportantMap.selfPortrait;
+  const noticeContainer = document.getElementById("bookingImportantText");
+
+  noticeContainer.innerHTML = `
+    <div class="important-box">
+      <div class="important-title">IMPORTANT</div>
+      <ul>
+        ${noticeItems.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+    </div>
+  `;
+
+  const modal = new bootstrap.Modal(
+    document.getElementById("bookingImportantModal"),
+  );
   modal.show();
 }
 
 // Filter and display cards
 function filterAndDisplay() {
-  let filtered = allCards;
+  let filtered = [...allCards];
 
   // Filter by category
   if (currentCategory !== "all") {
@@ -350,6 +572,14 @@ function filterAndDisplay() {
     filtered = filtered.filter((card) =>
       card.title.toLowerCase().includes(searchQuery.toLowerCase()),
     );
+  }
+
+  if (currentCategory === "all") {
+    filtered.sort((a, b) => {
+      if (a.title === "SNAP" && b.title !== "SNAP") return -1;
+      if (b.title === "SNAP" && a.title !== "SNAP") return 1;
+      return 0;
+    });
   }
 
   // Display filtered cards
@@ -408,6 +638,14 @@ document.addEventListener("DOMContentLoaded", () => {
     searchQuery = e.target.value;
     filterAndDisplay();
   });
+
+  const bookingBtn = document.getElementById("bookingBtn");
+  if (bookingBtn) {
+    bookingBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      showBookingImportantMessage();
+    });
+  }
 
   // Initial display
   filterAndDisplay();

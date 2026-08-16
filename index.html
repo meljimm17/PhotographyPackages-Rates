@@ -53,7 +53,6 @@
             <button class="category-btn" data-category="studioRental">
               Studio Rental
             </button>
-            <button class="category-btn" data-category="addons">Add-ons</button>
           </div>
           <!-- Mobile category dropdown -->
           <div class="d-lg-none w-75 mx-auto" style="margin-top: 20px">
@@ -66,8 +65,26 @@
               <option value="selfPortrait">Self Portrait</option>
               <option value="studioPortrait">Studio Portrait</option>
               <option value="studioRental">Studio Rental</option>
-              <option value="addons">Add-ons</option>
             </select>
+          </div>
+
+          <div class="utility-actions" aria-label="Booking actions">
+            <a
+              class="utility-btn utility-btn-primary"
+              href="#"
+              aria-label="Message us for booking"
+              id="bookingBtn"
+            >
+              Message Us for Booking
+            </a>
+            <a
+              class="utility-btn utility-btn-secondary"
+              href="#"
+              aria-label="View location"
+              id="locationBtn"
+            >
+              View Location
+            </a>
           </div>
         </div>
       </div>
@@ -93,10 +110,11 @@
           </div>
           <div class="modal-body">
             <div class="details-price" id="modalPrice"></div>
-            <h6 style="font-weight: bold; margin-top: 20px">
-              Package Includes:
-            </h6>
-            <ul id="modalFeatures"></ul>
+            <div class="detail-block">
+              <h6>Package Includes:</h6>
+              <ul id="modalFeatures"></ul>
+            </div>
+            <div id="modalAdditionalInfo" class="details-extra"></div>
           </div>
           <div class="modal-footer">
             <button
@@ -105,6 +123,29 @@
               data-bs-dismiss="modal"
             >
               Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Important Modal -->
+    <div class="modal fade" id="bookingImportantModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">IMPORTANT</h5>
+          </div>
+          <div class="modal-body">
+            <div id="bookingImportantText" class="important-message"></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary modal-close-btn"
+              data-bs-dismiss="modal"
+            >
+              Continue
             </button>
           </div>
         </div>
