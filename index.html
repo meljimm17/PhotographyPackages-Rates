@@ -21,78 +21,591 @@
             <h1>Our Packages</h1>
             <h4>Find session that's right for you</h4>
           </div>
-          <div
-            class="pricing-search"
-            style="text-align: center; margin-top: 20px"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M11 4a7 7 0 1 1 0 14a7 7 0 0 1 0-14zm8 20l-4.35-4.35" />
-            </svg>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Search for a package"
-            />
-          </div>
-        </div>
-        <div
-          class="selection-categories"
-          style="text-align: center; margin-top: 20px"
-        >
-          <!-- Desktop category buttons -->
-          <div
-            class="buttons d-none d-lg-flex justify-content-center gap-2 flex-wrap"
-          >
-            <button class="category-btn active" data-category="all">ALL</button>
-            <button class="category-btn" data-category="selfPortrait">
-              Self Portrait
-            </button>
-            <button class="category-btn" data-category="studioPortrait">
-              Studio Portrait
-            </button>
-            <button class="category-btn" data-category="studioRental">
-              Studio Rental
-            </button>
-          </div>
-          <!-- Mobile category dropdown -->
-          <div class="d-lg-none w-75 mx-auto" style="margin-top: 20px">
-            <select
-              class="form-select"
-              id="categorySelect"
-              aria-label="Select category"
-            >
-              <option value="all">ALL</option>
-              <option value="selfPortrait">Self Portrait</option>
-              <option value="studioPortrait">Studio Portrait</option>
-              <option value="studioRental">Studio Rental</option>
-            </select>
-          </div>
+          <div class="sticky-controls">
+            <div class="pricing-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M11 4a7 7 0 1 1 0 14a7 7 0 0 1 0-14zm8 20l-4.35-4.35"
+                />
+              </svg>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for a package"
+              />
+            </div>
 
-          <div class="utility-actions" aria-label="Booking actions">
-            <a
-              class="utility-btn utility-btn-primary"
-              href="#"
-              aria-label="Message us for booking"
-              id="bookingBtn"
-            >
-              Message Us for Booking
-            </a>
-            <a
-              class="utility-btn utility-btn-secondary"
-              href="#"
-              aria-label="View location"
-              id="locationBtn"
-            >
-              View Location
-            </a>
+            <div class="selection-categories">
+              <!-- Desktop category buttons -->
+              <div
+                class="buttons d-none d-lg-flex justify-content-center gap-2 flex-wrap"
+              >
+                <button class="category-btn active" data-category="all">
+                  ALL
+                </button>
+                <button class="category-btn" data-category="selfPortrait">
+                  Self Portrait
+                </button>
+                <button class="category-btn" data-category="studioPortrait">
+                  Studio Portrait
+                </button>
+                <button class="category-btn" data-category="studioRental">
+                  Studio Rental
+                </button>
+              </div>
+              <!-- Mobile category dropdown -->
+              <div class="d-lg-none w-75 mx-auto" style="margin-top: 20px">
+                <select
+                  class="form-select"
+                  id="categorySelect"
+                  aria-label="Select category"
+                >
+                  <option value="all">ALL</option>
+                  <option value="selfPortrait">Self Portrait</option>
+                  <option value="studioPortrait">Studio Portrait</option>
+                  <option value="studioRental">Studio Rental</option>
+                </select>
+              </div>
+
+              <div class="utility-actions" aria-label="Booking actions">
+                <a
+                  class="utility-btn utility-btn-primary"
+                  href="#"
+                  aria-label="Message us for booking"
+                  id="bookingBtn"
+                >
+                  Message Us for Booking
+                </a>
+                <a
+                  class="utility-btn utility-btn-secondary"
+                  href="#"
+                  aria-label="View location"
+                  id="locationBtn"
+                >
+                  View Location
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid mt-4 mb-4">
+    <div class="container-fluid mt-0 mb-4 p-0">
       <div class="cards-container" id="cardsContainer">
-        <!-- Cards will be populated here -->
+        <article class="card" data-card-id="1" data-category="selfPortrait">
+          <span class="popular-badge">Top Choice</span>
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="SNAP"
+          />
+          <div class="card-body">
+            <h5 class="card-title">SNAP</h5>
+            <div class="card-price">₱290</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>15-Minute Session</li>
+              <li>1 Person</li>
+              <li>Unlimited Shots</li>
+              <li>15 Enhanced Digital Copies</li>
+              <li>1 Backdrop Color</li>
+              <li>Access to Available Props</li>
+              <li>1 pc 4R Print</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional 10 Minutes — ₱100</li>
+                  <li>Additional Person — ₱100 per person</li>
+                  <li>Additional Backdrop Color — ₱150</li>
+                  <li>Studio Creative Set-up — ₱200</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>50–100 Photos — ₱200</li>
+                  <li>101–200 Photos — ₱300</li>
+                  <li>201–300 Photos — ₱400</li>
+                  <li>300+ Photos — ₱500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="2" data-category="selfPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="POSE"
+          />
+          <div class="card-body">
+            <h5 class="card-title">POSE</h5>
+            <div class="card-price">₱390</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>15-Minute Session</li>
+              <li>1–2 Persons</li>
+              <li>Unlimited Shots</li>
+              <li>15 Enhanced Digital Copies</li>
+              <li>1 Backdrop Color</li>
+              <li>Access to Available Props</li>
+              <li>2 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional 10 Minutes — ₱100</li>
+                  <li>Additional Person — ₱100 per person</li>
+                  <li>Additional Backdrop Color — ₱150</li>
+                  <li>Studio Creative Set-up — ₱200</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>50–100 Photos — ₱200</li>
+                  <li>101–200 Photos — ₱300</li>
+                  <li>201–300 Photos — ₱400</li>
+                  <li>300+ Photos — ₱500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="3" data-category="selfPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="CLICK"
+          />
+          <div class="card-body">
+            <h5 class="card-title">CLICK</h5>
+            <div class="card-price">₱550</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>15-Minute Session</li>
+              <li>3–4 Persons</li>
+              <li>Unlimited Shots</li>
+              <li>20 Enhanced Digital Copies</li>
+              <li>1 Backdrop Color</li>
+              <li>Access to Available Props</li>
+              <li>2 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional 10 Minutes — ₱100</li>
+                  <li>Additional Person — ₱100 per person</li>
+                  <li>Additional Backdrop Color — ₱150</li>
+                  <li>Studio Creative Set-up — ₱200</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>50–100 Photos — ₱200</li>
+                  <li>101–200 Photos — ₱300</li>
+                  <li>201–300 Photos — ₱400</li>
+                  <li>300+ Photos — ₱500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="4" data-category="selfPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="FLASH"
+          />
+          <div class="card-body">
+            <h5 class="card-title">FLASH</h5>
+            <div class="card-price">₱790</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>30-Minute Session</li>
+              <li>5–6 Persons</li>
+              <li>Unlimited Shots</li>
+              <li>30 Enhanced Digital Copies</li>
+              <li>1 Backdrop Color</li>
+              <li>Access to Available Props</li>
+              <li>4 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional 10 Minutes — ₱100</li>
+                  <li>Additional Person — ₱100 per person</li>
+                  <li>Additional Backdrop Color — ₱150</li>
+                  <li>Studio Creative Set-up — ₱200</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>50–100 Photos — ₱200</li>
+                  <li>101–200 Photos — ₱300</li>
+                  <li>201–300 Photos — ₱400</li>
+                  <li>300+ Photos — ₱500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="5" data-category="selfPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="SPOTLIGHT"
+          />
+          <div class="card-body">
+            <h5 class="card-title">SPOTLIGHT</h5>
+            <div class="card-price">₱990</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>30-Minute Session</li>
+              <li>7–10 Persons</li>
+              <li>Unlimited Shots</li>
+              <li>30 Enhanced Digital Copies</li>
+              <li>1 Backdrop Color</li>
+              <li>Access to Available Props</li>
+              <li>4 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional 10 Minutes — ₱100</li>
+                  <li>Additional Person — ₱100 per person</li>
+                  <li>Additional Backdrop Color — ₱150</li>
+                  <li>Studio Creative Set-up — ₱200</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>50–100 Photos — ₱200</li>
+                  <li>101–200 Photos — ₱300</li>
+                  <li>201–300 Photos — ₱400</li>
+                  <li>300+ Photos — ₱500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="6" data-category="selfPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="FOREVER PROMO"
+          />
+          <div class="card-body">
+            <h5 class="card-title">FOREVER PROMO</h5>
+            <div class="card-price">₱99</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>5-Minute Photo Session</li>
+              <li>1 Person Only</li>
+              <li>5 Enhanced Digital Copies</li>
+              <li>Session time may be combined with friends.</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Take All Enhanced Photos (Forever Promo)</h6>
+                <ul>
+                  <li>1–2 Persons — ₱100</li>
+                  <li>3–4 Persons — ₱200</li>
+                  <li>5–7 Persons — ₱300</li>
+                  <li>8–10 Persons — ₱500</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="7" data-category="studioPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="MINI SESSION"
+          />
+          <div class="card-body">
+            <h5 class="card-title">MINI SESSION</h5>
+            <div class="card-price">₱399</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>30-Minute Studio Session</li>
+              <li>Up to 3 Persons</li>
+              <li>Professional Photographer</li>
+              <li>15 Enhanced Digital Photos</li>
+              <li>1 Plain Backdrop Color</li>
+              <li>(Themed backdrops available for kids.)</li>
+              <li>2 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional Person — ₱100/person</li>
+                  <li>Additional 10 Minutes — ₱200</li>
+                  <li>Additional Plain Backdrop — ₱100</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>Mini Session - 200</li>
+                  <li>Classic Session — ₱300</li>
+                  <li>Signature Session — ₱500</li>
+                  <li>
+                    All enhanced digital copies will be delivered via Google
+                    Drive.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="8" data-category="studioPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="CLASSIC"
+          />
+          <div class="card-body">
+            <h5 class="card-title">CLASSIC</h5>
+            <div class="card-price">₱799</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>30-Minute Studio Session</li>
+              <li>Up to 5 Persons</li>
+              <li>Professional Photographer</li>
+              <li>30 Enhanced Digital Photos</li>
+              <li>1 Plain Backdrop Color</li>
+              <li>(Themed backdrops available for kids.)</li>
+              <li>2 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional Person — ₱100/person</li>
+                  <li>Additional 10 Minutes — ₱200</li>
+                  <li>Additional Plain Backdrop — ₱100</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>Mini Session - 200</li>
+                  <li>Classic Session — ₱300</li>
+                  <li>Signature Session — ₱500</li>
+                  <li>
+                    All enhanced digital copies will be delivered via Google
+                    Drive.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="9" data-category="studioPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="SIGNATURE"
+          />
+          <div class="card-body">
+            <h5 class="card-title">SIGNATURE</h5>
+            <div class="card-price">₱1,500</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>60-Minute Studio Session</li>
+              <li>Up to 10 Persons</li>
+              <li>Professional Photographer</li>
+              <li>50 Enhanced Digital Photos</li>
+              <li>1 Plain Backdrop Color</li>
+              <li>4 pcs 4R Prints</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>Add-ons</h6>
+                <ul>
+                  <li>Additional Person — ₱100/person</li>
+                  <li>Additional 10 Minutes — ₱200</li>
+                  <li>Additional Plain Backdrop — ₱100</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>Take All Enhanced Digital Copies</h6>
+                <ul>
+                  <li>Mini Session - 200</li>
+                  <li>Classic Session — ₱300</li>
+                  <li>Signature Session — ₱500</li>
+                  <li>
+                    All enhanced digital copies will be delivered via Google
+                    Drive.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="10" data-category="studioPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="KIDS-THEMED BACKDROP"
+          />
+          <div class="card-body">
+            <h5 class="card-title">KIDS-THEMED BACKDROP</h5>
+            <div class="card-price">₱300-₱500</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Creative themed setup</li>
+              <li>Perfect for kids</li>
+              <li>Reservation required</li>
+              <li>1-2 weeks notice needed</li>
+              <li>Elevate your session</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>CREATIVE SETUPS</h6>
+                <ul>
+                  <li>Reservation required 1–2 weeks before your session.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>PHOTO DELIVERY</h6>
+                <ul>
+                  <li>Mini &amp; Classic Sessions: 1–2 Days</li>
+                  <li>Rush photo delivery is not available.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="11" data-category="studioPortrait">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="FANTASY-THEMED SETUP"
+          />
+          <div class="card-body">
+            <h5 class="card-title">FANTASY-THEMED SETUP</h5>
+            <div class="card-price">From ₱1,000</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Custom creative setup</li>
+              <li>Bring your mood board</li>
+              <li>Professional styling</li>
+              <li>Bring your vision to life</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>CREATIVE SETUPS</h6>
+                <ul>
+                  <li>
+                    Send us your inspiration or mood board, and we'll help bring
+                    your vision to life.
+                  </li>
+                  <li>
+                    Hair &amp; Makeup Artist (HMUA) recommendations are
+                    available upon request.
+                  </li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>PHOTO DELIVERY</h6>
+                <ul>
+                  <li>Signature Session: 2–3 Days</li>
+                  <li>Rush photo delivery is not available.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="12" data-category="studioRental">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="1 HOUR RENTAL"
+          />
+          <div class="card-body">
+            <h5 class="card-title">1 HOUR RENTAL</h5>
+            <div class="card-price">₱1,000</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Camera included</li>
+              <li>Basic Studio Lights</li>
+              <li>Available Props</li>
+              <li>Plain Backdrops</li>
+              <li>Perfect for beginners</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-card-id="13" data-category="studioRental">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="2 HOURS RENTAL"
+          />
+          <div class="card-body">
+            <h5 class="card-title">2 HOURS RENTAL</h5>
+            <div class="card-price">₱1,800</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Camera included</li>
+              <li>Basic Studio Lights</li>
+              <li>Available Props</li>
+              <li>Plain Backdrops</li>
+              <li>Extended time</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-card-id="14" data-category="studioRental">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="3 HOURS RENTAL"
+          />
+          <div class="card-body">
+            <h5 class="card-title">3 HOURS RENTAL</h5>
+            <div class="card-price">₱2,600</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Camera included</li>
+              <li>Basic Studio Lights</li>
+              <li>Available Props</li>
+              <li>Plain Backdrops</li>
+              <li>Maximum flexibility</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-card-id="15" data-category="studioRental">
+          <img
+            src="https://www.shutterstock.com/image-photo/powerful-male-lion-stands-proudly-600nw-2630722023.jpg"
+            class="card-img-top"
+            alt="ADDITIONAL HOUR"
+          />
+          <div class="card-body">
+            <h5 class="card-title">ADDITIONAL HOUR</h5>
+            <div class="card-price">₱500/hr</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Add more time</li>
+              <li>Camera included</li>
+              <li>Studio Lights</li>
+              <li>Props &amp; Backdrops</li>
+              <li>Per hour rate</li>
+            </ul>
+          </div>
+        </article>
       </div>
       <div class="no-results" id="noResults" style="display: none">
         No packages found matching your search.
@@ -134,7 +647,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">IMPORTANT</h5>
+            <h5 class="modal-title">IMPORTANT NOTICE</h5>
           </div>
           <div class="modal-body">
             <div id="bookingImportantText" class="important-message"></div>
@@ -151,7 +664,61 @@
         </div>
       </div>
     </div>
-
+    <div class="d-none" id="bookingMessages">
+      <div
+        data-booking-category="selfPortrait"
+        data-booking-label="Self Portrait"
+      >
+        <ul>
+          <li>
+            All digital photos are professionally enhanced using Adobe
+            Lightroom.
+          </li>
+          <li>
+            Photos will be delivered via Google Drive on the same day, no later
+            than 10:00 PM.
+          </li>
+          <li>
+            Rush Release: Add ₱200 for expedited photo delivery (subject to
+            availability).
+          </li>
+        </ul>
+      </div>
+      <div
+        data-booking-category="studioPortrait"
+        data-booking-label="Studio Portrait"
+      >
+        <ul>
+          <li>
+            All enhanced digital copies will be delivered via Google Drive (1-2
+            Days).
+          </li>
+        </ul>
+      </div>
+      <div
+        data-booking-category="studioRental"
+        data-booking-label="Studio Rental"
+      >
+        <ul>
+          <li>
+            Please bring your own USB flash drive for the transfer of your soft
+            copies after the session.
+          </li>
+          <li>
+            Ensure your flash drive has enough available storage before your
+            scheduled rental.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer
+      class="footer"
+      style="background-color: #262c38; padding: 20px 0; margin-top: 40px"
+    >
+      <div class="container text-center text-white">
+        <p>&copy; 2026 SelfPic. All rights reserved.</p>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
