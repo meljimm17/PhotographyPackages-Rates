@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("bookingContinueBtn")
     ?.addEventListener("click", () => {
-      window.open("https://www.facebook.com/SelfPicStudio12", "_blank");
+      window.location.href = "https://www.facebook.com/SelfPicStudio12";
     });
 
   document.getElementById("locationBtn")?.addEventListener("click", () => {
