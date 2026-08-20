@@ -77,6 +77,26 @@ body {
   color: #666;
   letter-spacing: 0.3px;
   margin: 0;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 7s steps(34, end) 0.85s infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  70% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 /* ================== SEARCH BAR ================== */

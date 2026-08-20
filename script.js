@@ -126,6 +126,16 @@ document.addEventListener("DOMContentLoaded", () => {
     showBookingImportantMessage();
   });
 
+  document
+    .getElementById("bookingContinueBtn")
+    ?.addEventListener("click", () => {
+      window.open("https://www.facebook.com/SelfPicStudio12", "_blank");
+    });
+
+  document.getElementById("locationBtn")?.addEventListener("click", () => {
+    window.open("https://www.facebook.com/SelfPicStudio12", "blank");
+  });
+
   let touchStartX = 0;
   cardsContainer.addEventListener("touchstart", (event) => {
     touchStartX = event.changedTouches[0].screenX;
