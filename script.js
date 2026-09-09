@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   document.getElementById("locationBtn")?.addEventListener("click", () => {
-    window.open("https://www.facebook.com/SelfPicStudio12", "blank");
+    window.open("https://l.facebook.com/l.php?u=https%3A%2F%2Fmaps.google.com%2Fmaps%2Fplace%2F%2Fdata%3D!4m2!3m1!1s0x32f961082ddb6217%3A0xffc7115ab3844e08%3Fentry%3Ds%26sa%3DX%26ved%3D2ahUKEwiN_NfzzuKWAxVDaXADHd9iOXAQ4kB6BAgXEAA%26hl%3Den%26fbclid%3DIwcGRvZgVleHRuA2FlbQIxMABicmlkETF2dE9JbkRUS0dNZk1xTzdsc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoNhDU4TXQ1fKeahxtKvXWzQklCVv8-mjtvICOhPt9yUTkQt-toxZsgDnCu6_aem_S-pAuxYsMVbnOow62J6tEQ&h=AUDIybrj9ffNhqsHwjn1hfboGQ_Vo3ZtjY4mynK2ZqADS1GPXPiiMaCkswHMY8Kl-hH5fbhVXeVbDqpFQHBUWs5qCN-gM10mEVABHXq4A1RswcySzfmgbviIL8LV6Gk", "blank");
   });
 
   let touchStartX = 0;
