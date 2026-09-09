@@ -67,6 +67,17 @@ function filterAndDisplay() {
       return matchesCategory && matchesSearch;
     })
     .sort((firstCard, secondCard) => {
+      if (currentCategory === "studioPortrait") {
+        const firstIsThemedSetup = ["10", "11", "12"].includes(
+          firstCard.dataset.cardId,
+        );
+        const secondIsThemedSetup = ["10", "11", "12"].includes(
+          secondCard.dataset.cardId,
+        );
+        if (firstIsThemedSetup !== secondIsThemedSetup) {
+          return firstIsThemedSetup ? 1 : -1;
+        }
+      }
       if (currentCategory === "all") {
         const firstIsTopChoice = firstCard.dataset.cardId === "1";
         const secondIsTopChoice = secondCard.dataset.cardId === "1";
@@ -101,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("categorySelect")
     ?.addEventListener("change", (event) => {
-      currentCategory = event.target.value;
+      currentCategory = event.target.value || "all";
       document.querySelectorAll(".category-btn").forEach((button) => {
         button.classList.toggle(
           "active",

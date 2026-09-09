@@ -42,14 +42,14 @@
               <div
                 class="buttons d-none d-lg-flex justify-content-center gap-2 flex-wrap"
               >
-                <button class="category-btn active" data-category="all">
-                  ALL
-                </button>
                 <button class="category-btn" data-category="selfPortrait">
                   Self Portrait
                 </button>
                 <button class="category-btn" data-category="studioPortrait">
                   Studio Portrait
+                </button>
+                <button class="category-btn" data-category="creativeSetupCollection">
+                  Creative Setup Collection
                 </button>
                 <button class="category-btn" data-category="studioRental">
                   Studio Rental
@@ -62,9 +62,12 @@
                   id="categorySelect"
                   aria-label="Select category"
                 >
-                  <option value="all">ALL</option>
+                  <option value="" selected>Select Category Here</option>
                   <option value="selfPortrait">Self Portrait</option>
                   <option value="studioPortrait">Studio Portrait</option>
+                  <option value="creativeSetupCollection">
+                    Creative Setup Collection
+                  </option>
                   <option value="studioRental">Studio Rental</option>
                 </select>
               </div>
@@ -434,7 +437,7 @@
             </div>
           </div>
         </article>
-        <article class="card" data-card-id="10" data-category="studioPortrait">
+        <article class="card" data-card-id="10" data-category="creativeSetupCollection">
           <img
             src="assets/KIDDIE2.jpg"
             class="card-img-top"
@@ -468,7 +471,7 @@
             </div>
           </div>
         </article>
-        <article class="card" data-card-id="11" data-category="studioPortrait">
+        <article class="card" data-card-id="11" data-category="creativeSetupCollection">
           <img
             src="assets/fantasy.jpg"
             class="card-img-top"
@@ -508,7 +511,58 @@
             </div>
           </div>
         </article>
-        <article class="card" data-card-id="12" data-category="studioRental">
+        <article class="card" data-card-id="12" data-category="creativeSetupCollection">
+          <img
+            src="assets/KIDSBIRTHDAY.jpg"
+            class="card-img-top"
+            alt="KIDS' BIRTHDAY CAKE SMASH"
+          />
+          <div class="card-body">
+            <h5 class="card-title">KIDS' BIRTHDAY CAKE SMASH</h5>
+            <div class="card-price">₱500 - ₱1,500</div>
+            <button class="card-btn" type="button">View Details</button>
+            <ul class="card-features d-none">
+              <li>Make their special milestone extra sweet</li>
+              <li>Add-on: ₱500 | 30 minutes</li>
+              <li>For clients who already have a themed backdrop</li>
+              <li>All soft copies — enhanced</li>
+              <li>Different setup: ₱1,500 | 1-hour shoot</li>
+              <li>Theme inspiration of your choice</li>
+            </ul>
+            <div class="card-extra d-none">
+              <div class="detail-block">
+                <h6>ADD-ON</h6>
+                <ul>
+                  <li>₱500 | 30 minutes</li>
+                  <li>For clients who already have a themed backdrop</li>
+                  <li>All soft copies — Enhanced</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>DIFFERENT SETUP</h6>
+                <ul>
+                  <li>₱1,500 | 1 hour shoot</li>
+                  <li>Take all soft copies — Enhanced</li>
+                  <li>Theme inspiration of your choice</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h6>PLEASE NOTE</h6>
+                <ul>
+                  <li>Cake is not included.</li>
+                  <li>
+                    Please book 5–7 days before your preferred shoot date to
+                    allow enough time to prepare your setup.
+                  </li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <p>Let's make their birthday memories extra sweet!</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-card-id="13" data-category="studioRental">
           <img
             src="assets/1hour.png"
             class="card-img-top"
@@ -527,7 +581,7 @@
             </ul>
           </div>
         </article>
-        <article class="card" data-card-id="13" data-category="studioRental">
+        <article class="card" data-card-id="14" data-category="studioRental">
           <img
             src="assets/2hours.png"
             class="card-img-top"
@@ -546,7 +600,7 @@
             </ul>
           </div>
         </article>
-        <article class="card" data-card-id="14" data-category="studioRental">
+        <article class="card" data-card-id="15" data-category="studioRental">
           <img
             src="assets/3hours.png"
             class="card-img-top"
@@ -565,7 +619,7 @@
             </ul>
           </div>
         </article>
-        <article class="card" data-card-id="15" data-category="studioRental">
+        <article class="card" data-card-id="16" data-category="studioRental">
           <img
             src="assets/additionalHour.png"
             class="card-img-top"
@@ -668,6 +722,21 @@
         data-booking-label="Studio Portrait"
       >
         <ul>
+          <li>
+            All enhanced digital copies will be delivered via Google Drive (1-2
+            Days).
+          </li>
+        </ul>
+      </div>
+      <div
+        data-booking-category="creativeSetupCollection"
+        data-booking-label="Creative Setup Collection"
+      >
+        <ul>
+          <li>
+            Creative setup packages are subject to availability and may require
+            advance booking.
+          </li>
           <li>
             All enhanced digital copies will be delivered via Google Drive (1-2
             Days).
