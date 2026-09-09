@@ -98,6 +98,23 @@ function filterAndDisplay() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  cards.forEach((card) => {
+    const title = card.querySelector(".card-title");
+    const features = card.querySelectorAll(".card-features li");
+    const capacityText = [...features].find((item) =>
+      /person/i.test(item.textContent),
+    )?.textContent.trim();
+
+    if (!capacityText || card.querySelector(".card-capacity")) {
+      return;
+    }
+
+    const capacity = document.createElement("div");
+    capacity.className = "card-capacity";
+    capacity.textContent = capacityText;
+    title.insertAdjacentElement("afterend", capacity);
+  });
+
   document.querySelectorAll(".category-btn").forEach((button) => {
     button.addEventListener("click", () => {
       document

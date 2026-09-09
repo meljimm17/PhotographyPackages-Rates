@@ -655,11 +655,13 @@
           </div>
           <div class="modal-body">
             <div class="details-price" id="modalPrice"></div>
-            <div class="detail-block">
-              <h6>Package Includes:</h6>
-              <ul id="modalFeatures"></ul>
+            <div class="details-layout">
+              <div class="detail-block detail-block-package">
+                <h6>Package Includes:</h6>
+                <ul id="modalFeatures"></ul>
+              </div>
+              <div id="modalAdditionalInfo" class="details-extra"></div>
             </div>
-            <div id="modalAdditionalInfo" class="details-extra"></div>
           </div>
           <div class="modal-footer">
             <button
@@ -684,7 +686,7 @@
           <div class="modal-body">
             <div id="bookingImportantText" class="important-message"></div>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer booking-modal-footer">
             <button
               type="button"
               class="btn btn-secondary modal-close-btn"
@@ -692,6 +694,13 @@
               id="bookingContinueBtn"
             >
               Continue
+            </button>
+            <button
+              type="button"
+              class="btn modal-back-btn"
+              data-bs-dismiss="modal"
+            >
+              Back
             </button>
           </div>
         </div>
