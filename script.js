@@ -85,6 +85,13 @@ function filterAndDisplay() {
           return firstIsTopChoice ? -1 : 1;
         }
       }
+      if (currentCategory === "all" || currentCategory === "studioRental") {
+        const firstIsAdditionalHour = firstCard.dataset.cardId === "16";
+        const secondIsAdditionalHour = secondCard.dataset.cardId === "16";
+        if (firstIsAdditionalHour !== secondIsAdditionalHour) {
+          return firstIsAdditionalHour ? 1 : -1;
+        }
+      }
       return getPriceValue(firstCard) - getPriceValue(secondCard);
     });
 
